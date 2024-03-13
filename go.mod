@@ -1,6 +1,6 @@
 module gha-test
 
-replace github.com/openpubkey/openpubkey v0.2.2 => github.com/ethanheilman/openpubkey v0.0.0-20240313030836-163c5651d6a8
+replace github.com/openpubkey/openpubkey v0.2.2 => github.com/ethanheilman/openpubkey v0.0.0-20240313164525-27c44b9142f7
 
 go 1.20
 
