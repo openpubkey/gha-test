@@ -3,6 +3,7 @@ name: Go Checks
 on: 
     [push]
 
+
 jobs:
   gofmt:
     name: Check Code Formatting
