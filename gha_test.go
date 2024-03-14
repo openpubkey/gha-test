@@ -11,7 +11,7 @@ import (
 )
 
 func TestGithub(t *testing.T) {
-	var op providers.OpenIdProvider
+	var op client.OpenIdProvider
 	var err error
 
 	op, err = providers.NewGithubOpFromEnvironment()
