@@ -6,7 +6,6 @@ For instance: `go mod edit -replace github.com/openpubkey/openpubkey@v0.2.2=gith
 
 2. Run `go mod tidy`
 
-3. run go test ./... to ensure the code is correct
+3. run go test ./... to ensure the code is correct.
 
 4. Push to origin to run the test in a github-action
-
