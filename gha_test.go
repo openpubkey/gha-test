@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/openpubkey/openpubkey/client"
-	"github.com/openpubkey/openpubkey/client/providers"
+	"github.com/openpubkey/openpubkey/providers"
 	"github.com/stretchr/testify/require"
 )
 
@@ -25,6 +25,6 @@ func TestGithub(t *testing.T) {
 	require.NotNil(t, pkt)
 	fmt.Println("New PK token generated")
 
-	err = op.Verifier().VerifyProvider(context.TODO(), pkt)
+	err = op.VerifyProvider(context.TODO(), pkt)
 	require.NoError(t, err)
 }
