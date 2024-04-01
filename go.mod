@@ -39,4 +39,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/openpubkey/openpubkey v0.2.2 => github.com/ethanheilman/openpubkey v0.0.0-20240401193453-f46f8ea32123
+replace github.com/openpubkey/openpubkey v0.2.2 => github.com/ethanheilman/openpubkey v0.0.0-20240401211228-0e3318eea759
