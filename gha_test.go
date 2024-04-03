@@ -17,14 +17,14 @@ func TestGithub(t *testing.T) {
 	op, err = providers.NewGithubOpFromEnvironment()
 	require.NoError(t, err)
 
-	client, err := client.New(op)
+	c, err := client.New(op)
 	require.NoError(t, err)
 
-	pkt, err := client.Auth(context.TODO())
+	pkt, err := c.Auth(context.TODO())
 	require.NoError(t, err)
 	require.NotNil(t, pkt)
 	fmt.Println("New PK token generated")
 
-	err = op.VerifyProvider(context.TODO(), pkt)
+	err = client.VerifyPKToken(context.TODO(), pkt, op)
 	require.NoError(t, err)
 }
