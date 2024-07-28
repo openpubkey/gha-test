@@ -2,6 +2,7 @@ package ghasign
 
 import (
 	"context"
+	"encoding/base64"
 	"fmt"
 	"testing"
 
@@ -25,10 +26,15 @@ func TestGithub(t *testing.T) {
 	require.NoError(t, err)
 	require.NotNil(t, pkt)
 	fmt.Println("New PK token generated")
+	pktCom, _ := pkt.Compact()
+
+	b64pktCom := base64.StdEncoding.EncodeToString(pktCom)
+	fmt.Println(string(b64pktCom))
 
 	ver, err := verifier.New(op)
 	require.NoError(t, err)
 
 	err = ver.VerifyPKToken(context.TODO(), pkt)
 	require.NoError(t, err)
+	require.Error(t, err)
 }
