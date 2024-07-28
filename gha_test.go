@@ -26,15 +26,20 @@ func TestGithub(t *testing.T) {
 	require.NoError(t, err)
 	require.NotNil(t, pkt)
 	fmt.Println("New PK token generated")
-	pktCom, _ := pkt.Compact()
 
-	b64pktCom := base64.StdEncoding.EncodeToString(pktCom)
-	fmt.Println(string(b64pktCom))
+	// For debugging purposes, lets us write the PK Token to the test log
+	outputPktToken := false
+	if outputPktToken {
+		pktCom, _ := pkt.Compact()
+		b64pktCom := base64.StdEncoding.EncodeToString(pktCom)
+		fmt.Println(string(b64pktCom))
+		require.False(t, true) // Println in tests are hidden unless test fails.
+	}
 
 	ver, err := verifier.New(op)
 	require.NoError(t, err)
 
 	err = ver.VerifyPKToken(context.TODO(), pkt)
 	require.NoError(t, err)
-	require.Error(t, err)
+
 }
